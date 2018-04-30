@@ -1,0 +1,1593 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	max-width: 1920px
+	min-width: 320px
+	margin: 0 auto
+	position: relative
+	font: 16px/1.2 $default-font-family
+	color: #000
+	overflow-x: hidden
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+.mt-0
+	margin-top: 0!important
+
+.nowrap
+	white-space: nowrap
+
+::selection
+	background-color: $accent-color-1
+	color: #fff
+
+.slick-arrow
+	position: absolute
+	top: 43%
+	display: inline-block
+	width: 34px
+	height: 67px
+	background: url('../img/slider-arrows.png') no-repeat
+	border: none
+	outline: none
+	z-index: 100
+	
+	&:hover
+		cursor: pointer
+	&:active, &:focus
+		outline: none
+
+.slick-prev
+	left: -108px
+	background-position: 0 0
+.slick-next
+	right: -108px
+	background-position: 100% 0
+
+.slick-dots
+	padding: 0
+	margin: 0
+	position: absolute
+	bottom: 0
+	left: 50%
+	transform: translateX(-50%)
+	li
+		display: inline-block
+		width: 10px
+		height: 10px
+		margin-right: 8px
+		border: 1px solid $accent-color-2
+		border-radius: 50%
+		transition: $transition
+		&:hover
+			background-color: $accent-color-2
+	.slick-active
+		background-color: $accent-color-2
+	button
+		visibility: hidden
+
+
+
+.btn__scroll
+	position: fixed
+	left: 5%
+	bottom: 12%
+	width: 50px
+	height: 50px
+	font-size: .8125em
+	background: url('../img/arrow.svg') no-repeat
+	background-size: 100%
+	background-position: center
+	cursor: pointer
+	opacity: .9
+	z-index: 999
+	transition: transform .5s
+	outline: none
+	
+
+.btn__scroll-up
+	position: fixed
+	&:hover
+		transform: translate(-1px,-1px)
+	&:active
+		transform: translate(1px,1px)
+
+.btn__scroll-down
+	position: absolute
+	transform: rotate(180deg)
+	&:hover
+		transform: rotate(180deg) translate(-1px,-1px)
+	&:active
+		transform: rotate(180deg) translate(1px,1px)
+
+
+
+
+
+@keyframes buttonBlink
+	from 
+		box-shadow: 0px 0px 0px 0px #c04d45
+	50% 
+		box-shadow: 0px 0px 20px 1px #c04d45
+	to 
+		box-shadow: 0px 0px 0px 0px #c04d45
+
+
+// =============================
+
+header
+	position: relative
+	min-height: 39em
+	background: #fff url('../img/header-bg.png') no-repeat
+	background-size: cover
+	background-position: 50% 0
+	box-shadow: 0 0px 200px 10px rgba(0, 0, 0, 0.25)
+
+.top-line
+	width: 100%
+	text-align: center
+
+.logo
+	&-wrap
+		max-width: 320px
+
+	&-descr
+		margin-top: -10px
+		padding-left: 0
+		font: 1rem 'Raleway-Light'
+
+.tel-wrap
+	position: relative
+	padding-left: 30px
+	font: 1.3em 'Raleway-Bold', sans-serif
+	&::before
+		content: "\f095"
+		font-family: 'Font Awesome'
+		font-size: 29px
+		display: inline-block
+		width: 47px
+		height: 47px
+		padding-top: 7px
+		position: absolute
+		top: -9px
+		left: -27px
+		color: $accent-color-1
+		transform: scaleX(-1)
+		border: 2px solid $accent-color-1
+		border-radius: 50%
+		transition: $transition
+
+.tel
+	text-decoration: none
+	transition: $transition
+
+.tel-wrap
+	transition: $transition
+	&:hover
+		&::before
+			color: $accent-color-1
+			border-color: $accent-color-1
+		.tel
+			transition: $transition
+			color: $accent-color-1
+			text-decoration: none
+
+
+.top-line-tel
+	color: #000
+
+.page-heading
+	margin-top: 4.2em
+	padding: 2px 25px
+	text-align: center
+	font: 2.5em 'Raleway-Bold', sans-serif
+	line-height: 1.2
+	letter-spacing: 1px
+	background-image: linear-gradient(90deg, rgba(255,255,255,.1), rgba(255,255,255,.8), rgba(255,255,255,.1))
+	&-accent
+		display: block
+		font-family: 'Raleway-Black', sans-serif
+		color: $accent-color-1
+		text-transform: uppercase
+
+.header-btn-wrap
+	margin-top: 5.25em
+	text-align: center
+
+
+.header-btn
+	display: inline-block
+	width: 100%
+	padding: 16px
+	text-transform: uppercase
+	color: #fff
+	font: 26px 'Raleway-Black'
+	border: none
+	border-radius: 30px
+	outline: none
+	background-image: linear-gradient(#a84d46, #c0021f)
+	cursor: pointer
+	transition: $transition
+	box-shadow: 0 15px 30px 1px rgba(0, 0, 0, .4)
+	animation: buttonBlink 2s infinite
+	&:hover
+		background-image: linear-gradient(#c0021f, #a84d46,)
+	&:focus
+		outline: none
+	&:active
+		transform: translate(1px,1px)
+
+.section-heading
+	margin-bottom: 0
+	font-family: "Raleway-Black", sans-serif
+
+.border-outer
+	display: inline-block	
+	position: relative
+
+.border-outer:after, .border-outer:before,
+.border-inner:after, .border-inner:before
+	content: ''
+.border-outer
+	&:before 
+		position: absolute
+		width: 50%
+		height: 4px
+		background: $accent-color-1
+		top: 0
+		left: 50%
+	&:after 
+		position: absolute
+		width: 4px
+		height: 50%
+		background: $accent-color-1
+		top: 0
+		right: 0
+.border-inner
+	&:before
+		position: absolute
+		width: 50%
+		height: 4px
+		background: $accent-color-1
+		bottom: 0
+		right: 50%
+	&:after 
+		position: absolute
+		width: 4px
+		height: 50%
+		background: $accent-color-1
+		bottom: 0
+		left: 0
+
+
+
+
+
+// ===================================
+.recruitment
+	padding: 50px 0 0
+	background: url('../img/recruitment-bg.png') no-repeat
+	background-position: 50% 100%
+	font-size: 1em
+	&-section-heading
+		padding: 30px
+		font-size: 1.3em
+		text-transform: uppercase
+		color: $accent-color-1
+		text-align: center
+	.section-heading-border.border-outer
+		&:before 
+			width: 50%
+			top: 0
+			left: 0
+		&:after 
+			height: 50%
+			top: 50%
+			right: 0
+	.section-heading.border-inner
+		&:before
+			width: 50%
+			bottom: 0
+			right: 0
+		&:after 
+			height: 50%
+			bottom: 50%
+			left: 0
+	&-text
+		margin: 42px 0 0
+		font-size: 1em
+
+	&-info
+		margin-top: 45px
+		&-list
+			padding-left: 18px
+			font: 1em 'Raleway-Bold', sans-serif
+
+
+		
+
+	.filters
+		&-wrap
+			width: 100% // ie
+			margin-top: 47px
+			padding: 25px 15px
+			font-size: 1em
+		&-heading
+			font-family: 'Raleway-Bold'
+			color: #51509d
+			text-align: center
+
+	.filter
+		margin-top: 45px
+		text-align: center
+		&-heading
+			font-family: 'Raleway-Bold'
+			color: #51509d
+		&-img
+			width: 68px
+			height: 65px
+			margin: 0 auto
+			background-repeat: no-repeat
+		&-img-1
+			background-position: 0 -8px
+		&-img-2
+			background-position: -72px  -8px
+		&-img-3
+			background-position: -144px -8px
+		&-img-4
+			background-position: -229px -8px
+		&-img-5
+			background-position: -314px -7px
+		&-img-6
+			background-position: -397px -8px
+		&-img-7
+			background-position: -475px -6px
+		&-img-8
+			background-size: cover
+			background-position: -442px 0
+		&-text
+			font: .78em 'Raleway-Bold', sans-serif
+	&-link
+		margin-top: 33px
+		color: #51509d
+		text-align: center
+		text-transform: uppercase
+		a
+			font: 1.222222222222222em 'Raleway-Bold', sans-serif
+			color: inherit
+	&-important
+		margin: 21px 0 34px
+		font: 1.11111111111em 'Raleway-Bold', sans-serif
+		text-align: center
+
+		&-list-wrap
+			padding: 30px 0
+			background-color: #fff
+
+		&-list
+			margin: 0
+			padding-left: 0
+			font: 1em 'Raleway-Bold', sans-serif
+			text-transform: uppercase
+			color: $accent-color-1
+			list-style-type: none
+			counter-reset: li
+			li
+				position: relative
+				margin-bottom: 25px
+				padding-left: 55px
+				&::before
+					content: counter(li)
+					counter-increment: li
+					position: absolute
+					top: -23px
+					left: 0
+					font: 45px 'Raleway-Black', sans-serif
+					font-style: italic
+				&:last-child
+					margin-bottom: 0
+.mt-15
+	margin-top: 15px
+
+
+.intro
+	&-heading
+		padding: 40px 0
+		background: url('../img/intro-bg.jpg') no-repeat
+		background-size: cover
+		.border-outer
+			&:before 
+				background: #383838
+				top: 0
+				left: 0
+			&:after 
+				background: #383838
+				top: 0
+				right: 100%
+		.border-inner
+			&:before
+				background: #383838
+				bottom: 0
+				right: 0
+			&:after 
+				background: #383838
+				bottom: 0
+				left: 100%
+
+	&-heading-text
+		padding: 0.851063829787234em 1.914893617021277em
+		font: 2.2em 'Raleway-Black', sans-serif
+		text-transform: uppercase
+		color: $accent-color-2
+
+
+
+
+
+
+// ===============================================
+.about
+	min-height: 45em
+	padding: 2.2em 0 0
+	position: relative
+	z-index: -1
+
+	&-introducing
+		text-align: center
+
+	&-hello
+		font: 2.125em 'Raleway-Black', sans-serif
+		text-transform: uppercase
+		color: #353535
+	&-name
+		font-size: 2.6em 
+		letter-spacing: -1px
+		&-accent
+			font-family: 'Raleway-Bold', sans-serif
+			color: $accent-color-2
+
+	&-achievments
+		margin: 2em 0 0 0
+		padding: 0
+		list-style-type: none
+		text-align: center
+		font-size: 1.25em
+		&-accent
+			font-family: 'Raleway-Bold', sans-serif
+			color: $accent-color-1
+
+	&-biography
+		margin: 5em 0 0 0
+		padding: 0
+		list-style-type: none
+		font-size: .875em
+		position: relative
+		&::after
+			content: ''
+			display: inline-block
+			width: 561px
+			height: 320px
+			position: absolute
+			left: -35px
+			top: -53px
+			background: url('../img/line.png') no-repeat
+			background-size: 100%
+			z-index: -2
+
+		&-accent
+			font: 1.357142857142857em 'Raleway-Bold', sans-serif
+			color: $accent-color-2
+		li
+			line-height: 1
+			&:nth-child(1)
+				margin-left: 370px
+			&:nth-child(2)
+				margin-left: 290px
+			&:nth-child(3)
+				margin-left: 290px
+			&:nth-child(4)
+				margin-left: 220px
+			&:nth-child(5)
+				margin-left: 220px
+			&:nth-child(6)
+				margin-left: 175px
+			&:nth-child(7)
+				margin-left: 175px
+			&:nth-child(8)
+				margin-left: 100px
+			&:nth-child(9)
+				margin-left: 40px
+			&:nth-child(10)
+				margin-left: 0
+
+	&-img-wrap
+		position: relative
+		max-width: 360px
+		margin-left: auto
+
+	&-img
+		max-width: 103%
+
+
+
+
+
+
+// =========================================
+.contacts
+	min-height: 130px
+	height: 1px
+	background-color: #fff
+	box-shadow: 0 0px 100px 0px rgba(0, 0, 0, 0.4)
+	z-index: 1
+
+	&-social
+		transform: $scale
+
+	&-icon
+		display: block
+		width: 69px
+		height: 69px
+		background-repeat: no-repeat
+		position: relative
+		text-decoration: none
+		cursor: pointer
+		transition: $transition
+		text-decoration: none
+		&::before
+			display: inline-block
+			width: 69px
+			height: 69px
+			text-align: center
+			position: absolute
+			left: 0
+			color: #17365e
+		&:hover
+			text-decoration: none
+			&:before
+				color: $accent-color-2
+				border-color: $accent-color-2
+				transition: $transition
+
+		&-fb
+			&::before
+				content: "\f082"
+				font-family: 'Font Awesome Brands'
+				top: -10px
+				font-size: 74px
+		&-tg
+			&::before
+				content: "\f2c6"
+				font-family: 'Font Awesome Brands'
+				font-size: 69px
+				top: -5px
+		&-tel
+			&::before
+				content: "\f095"
+				font-family: 'Font Awesome'
+				font-size: 40px
+				padding-top: 8px
+				top: 0
+				transform: scaleX(-1)
+				border: 3px solid #17365e
+				border-radius: 50%
+
+	&-tel-heading
+		color: #343434
+		font: 1em 'Raleway-Bold', sans-serif
+		text-align: right
+	&-tel
+		font: 1.5em 'Raleway-Bold', sans-serif
+		color: #343434
+		a
+			font: inherit
+			color: inherit
+			text-decoration: none
+			transition: $transition
+			&:hover
+				transition: $transition
+				color: $accent-color-1
+	&-download
+		font: 1.25em 'Raleway-Bold', sans-serif
+		color: $accent-color-1
+		text-align: center
+		a
+			font: inherit
+			color: inherit
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+
+
+
+
+
+// ===================================
+.presentation
+	// padding: 54px 0 30px
+	// &-heading
+	// 	font: 1.75em 'Raleway-Bold', sans-serif
+	// 	color: #2861bf
+	&-video
+		margin-top: 43px
+		position: relative
+		.relation-ratio
+			padding-top: 56.25%
+		.relation-video
+			position: absolute
+			top: 0
+			left: 50%
+			transform: translateX(-50%)
+			width: 100%
+			height: 100%
+			max-width: 1000px
+
+
+
+
+
+// ===================================
+.team
+	margin-top: 5em
+	padding: 1em 0
+	&-section-heading
+		margin-bottom: 2.7em
+		font: 1.4em 'Raleway-Black', sans-serif
+		padding: 1em 3em
+		color: $accent-color-1
+		text-transform: uppercase
+	.border-outer
+		&:before 
+			background: $accent-color-1
+			top: 0
+			left: 0
+		&:after 
+			background: $accent-color-1
+			top: 0
+			right: 100%
+	.border-inner
+		&:before
+			background: $accent-color-1
+			bottom: 0
+			right: 0
+		&:after 
+			background: $accent-color-1
+			bottom: 0
+			left: 100%
+	&-member
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		&-img-wrap
+			width: 100%
+			max-width: 230px
+			height: auto
+			overflow: hidden
+		&-img
+			// display: inline-block
+		&-descr
+			max-width: 100%
+			margin-top: 2em
+			text-align: center
+		&-name
+			margin-bottom: 1em
+			font: 1.2em 'Raleway-Black', sans-serif
+			color: $accent-color-1
+			text-transform: uppercase
+		&-position
+			font-size: 1em
+			color: #2d2d2d
+
+	.text-center
+		text-align: left
+
+
+
+
+
+// ===================================
+.limitations
+	margin-top: 5em
+	&-heading
+		margin-bottom: 10px
+		padding: 0 84px
+		font-size: 1.25em 
+		text-transform: uppercase
+		&-red
+			color: #f61404
+			font: 1.166666666666667em 'Raleway-Black', sans-serif
+		&-green
+			display: block
+			text-align: right
+			color: #01ad5d
+			font: 1.166666666666667em 'Raleway-Black', sans-serif
+	&-content
+		background-image: linear-gradient(to left, #b0d9a1, #fff 35%)
+
+	&-list-wrap
+		margin-right: 25px
+		padding: 50px 65px
+
+	&-list
+		margin: 0
+		padding: 0
+		list-style-type: none
+		font-size: 1.125em
+		color: #282828
+		li
+			margin-bottom: 40px
+			font-weight: 700
+			&:last-child
+				margin-bottom: 0
+
+	.limitations-list-wrap.border-outer, .limitations-list-wrap .border-inner
+		&::after, &::before
+			background: #f61404
+
+	.limitations-globe.border-outer, .limitations-globe .border-inner
+		&::after, &::before
+			background: #01ad5d
+
+	&-globe-wrap
+		position: relative
+		padding: 40px 0
+		display: flex
+		justify-content: center
+		align-items: center
+		&::after, &::before
+			content: ''
+			display: inline-block
+			position: absolute
+			
+		&::after
+			width: 61px
+			height: 55px
+			left: -26px
+			bottom: 23px
+			background: url('../img/check.png') no-repeat
+			transform: $scale
+		&::before
+			width: 642px
+			height: 195px
+			bottom: -151px
+			left: -103px
+			background: url('../img/figure.png') no-repeat
+			background-size: 100% 195px
+
+
+	&-globe
+		padding: 127px 15px
+		&-text
+			font: 1.5em 'Raleway-Bold', sans-serif
+			text-align: center
+			&-accent
+				font-size: 1.25em
+				color: #01ad5d
+
+
+
+
+// ===================================
+.howWeWork
+	margin-top: 8.9em
+	&-heading-wrap
+		padding: 1.3em 5.8em
+	&-heading
+		margin-bottom: 0
+		font: 1.125em 'Raleway-Bold', sans-serif
+		text-transform: uppercase
+		color: #202020
+	&-img
+		width: 7em
+		height: 8em
+		background-repeat: no-repeat
+		background-size: 100%
+		background-position: center
+
+	&-item
+		margin-top: 3em
+		&-content
+			max-width: 100%
+			margin-top: 2em
+			text-align: center
+		&-heading
+			font: 1.125em 'Raleway-Bold', sans-serif
+			text-transform: uppercase
+			color: $accent-color-1
+		&-text
+			margin-top: 1em
+			color: #1d1d1d
+
+	.border-outer
+		&:before 
+			background: $accent-color-2
+			top: 0
+			left: 0
+		&:after 
+			background: $accent-color-2
+			top: 0
+			right: 100%
+	.border-inner
+		&:before
+			background: $accent-color-2
+			bottom: 0
+			right: 0
+		&:after 
+			background: $accent-color-2
+			bottom: 0
+			left: 100%	
+
+
+
+
+
+
+
+
+
+// ===================================
+.best-service
+	margin-top: 4.1em
+	overflow: hidden
+	position: relative
+	&::before
+		content: ''
+		position: absolute
+		top: 87px
+		right: 57%
+		display: inline-block
+		width: 848px
+		height: 501px
+		z-index: 0
+		background: url('../img/porshe.png') no-repeat
+		background-size: 100%
+		background-position: 50%
+
+
+	ul
+		margin-bottom: 0
+		padding-left: 0
+		list-style-type: none
+	&-heading
+		margin-bottom: 0
+		padding: 1.2em
+		font: 1.25em 'Raleway-Bold', sans-serif
+		text-transform: uppercase
+		&-wrap
+			margin-bottom: 1.8em
+			&.border-outer::before
+				left: 0
+			&.border-outer::after
+				right: 100%
+		&.border-inner::before
+			right: 0
+		&.border-inner::after
+			left: 100%
+
+		&-accent
+			font-family: 'Raleway-Black', sans-serif
+			color: $accent-color-1
+		&-number
+			font-size: 1.363636363636364em
+
+	&-descr
+		.border-outer
+			&:before 
+				width: 15%
+				background: #292929
+				top: 0
+				left: 85%
+			&:after 
+				height: 100%
+				background: #292929
+				top: 0
+				right: 0
+		.border-inner
+			&:before
+				width: 75%
+				background: #292929
+				bottom: 0
+				right: 0
+			&:after 
+				display: none
+		&-heading
+			// margin-top: 1.8em
+			font: 1.125em 'Raleway-Black', sans-serif
+			color: $accent-color-1
+		&-text
+			margin-top: .8em
+			font-size: 1em
+			.text-accent
+				font-family: 'Raleway-Bold', sans-serif
+
+		&-list
+			padding: .8em 0
+			font-family: 'Raleway-Bold', sans-serif
+			color: $accent-color-1
+
+			li
+				position: relative
+				padding-left: 28px
+				&::before
+					content: ''
+					display: inline-block
+					position: absolute
+					top: 0
+					left: 0
+					width: 22px
+					height: 15px
+					background: url('../img/arrows.png') no-repeat
+					background-position: 0 0
+
+		&-how
+			margin-top: .5em
+			font-family: 'Raleway-Bold', sans-serif
+
+			&-list
+				margin-top: .5em
+				li
+					padding-left: 12px
+					position: relative
+					&::before
+						content: '-'
+						display: inline-block
+						position: absolute
+						top: -2px
+						left: 0
+
+
+
+
+
+// ======================================
+.atlas
+	margin: 3em
+	&-heading
+		font: 1.125em 'Raleway-Bold', sans-serif
+		color: #353535
+		text-align: center
+		&-wrap
+			margin-top: 155px
+			padding: 1.8em 0.5em
+			&.border-outer::before
+				left: 0
+			&.border-outer::after
+				right: 100%
+		&.border-inner::before
+			right: 0
+		&.border-inner::after
+			left: 100%
+		&-accent
+			font-size: 1.25em
+			text-transform: uppercase
+	.pr-responsive
+		padding-right: 30px
+	.presentation-video
+		margin-top: 0
+
+
+
+
+
+
+
+
+
+// =============================================
+.professional-method
+	&::before
+		top: 87px
+		right: auto
+		left: 46%
+		width: 1000px
+		height: 100% !important
+		background: url('../img/detective.png') no-repeat
+		background-size: 100%
+		background-position: 50%
+	.best-service-descr-heading
+		color: $accent-color-2
+	.best-service-descr-list
+		color: $accent-color-2
+		li::before
+			background-position: 0 -21px
+	.best-service-descr-how-list
+		li
+			&:last-child
+				padding-right: 10px
+
+
+
+
+
+
+.btn
+	display: block
+	width: 100%
+	padding: 10px 30px
+	font: 13px 'Raleway-Bold', sans-serif
+	text-transform: uppercase
+	color: #fff
+	background-color: $accent-color-2
+	text-align: center
+	border-radius: 10px
+	transition: $transition
+	&:hover
+		color: #fff
+		text-decoration: none
+		background-color: $hover-2
+		transition: $transition
+	&-spec
+		background-color: $accent-color-1
+		font-size: 16px
+		animation: buttonBlink 2s infinite
+		&:hover
+			background-color: $hover-1
+		&-accent
+			text-transform: uppercase
+			font-size: 1.2em
+
+
+
+
+
+
+// ================================================
+.comparison
+	margin-top: 2em
+	background: url('../img/offersbg.png') no-repeat 50% 100%
+	background-size: 100%
+
+.comparison-table-wrap
+	padding: 50px 0
+	background-image: linear-gradient(transparent, rgba(255,255,255,.5) 10%)
+	
+.comparison-table
+	border-collapse: collapse
+	th, td
+		padding: 0.8em 15px
+		
+	th
+		font-size: 1.5em
+		text-align: center
+		&.uppercase
+			font-size: 2em
+			text-transform: uppercase
+	td
+		font: 1em 'Raleway-Bold', sans-serif
+		color: $accent-color-1 
+		text-transform: uppercase
+		vertical-align: middle
+		&.accent
+			font: 1.25em 'Raleway-Black', sans-serif
+		.small
+			font-size: 0.7777777777777778em
+			text-transform: none
+
+	col
+		width: 290px
+		background-image: linear-gradient(transparent, #7f7f7f 15%, #7f7f7f 85%, transparent)
+		background-repeat: no-repeat
+		background-size: 3px 89%
+		background-position: 100% 0
+		&:first-child
+			width: auto
+			background-image: linear-gradient(transparent, #7f7f7f 15%, #7f7f7f 85%, transparent), linear-gradient(transparent, #7f7f7f 15%, #7f7f7f 85%, transparent)
+			background-repeat: no-repeat
+			background-size: 3px 89%
+			background-position: 100% 0, 0 0
+
+
+	.font-lh-fix
+		position: relative
+		bottom: 3px
+		font-size: 1.1em
+
+.comparison-table-sm
+	display: none
+
+
+
+
+
+
+// ===============================================
+.feedback
+	position: relative
+
+	&-img-wrap
+		position: absolute
+		left: 0
+		bottom: 0
+
+	&-img
+		max-width: 120%
+
+	&-content
+		position: relative
+		padding: 5em 0 4em
+
+	&-heading-wrap
+		padding: 2em 3em
+	&-heading
+		font-size: 1.125em
+		text-align: center
+		text-transform: uppercase
+		&-wrap
+			&.border-outer::before
+				left: 0
+				background-color: $accent-color-2
+			&.border-outer::after
+				right: 100%
+				background-color: $accent-color-2
+		&.border-inner::before
+			right: 0
+			background-color: $accent-color-2
+		&.border-inner::after
+			left: 100%
+			background-color: $accent-color-2
+
+		&-accent
+			display: block
+			font: 1.5em 'Raleway-Black', sans-serif
+			color: $accent-color-1
+		&-bold
+			display: block
+			font-family: 'Raleway-Bold', sans-serif
+		&-colored
+			font-family: 'Raleway-Black', sans-serif
+			color: $accent-color-1
+
+
+	&-form
+		input
+			margin-top: 55px
+
+	&-manager
+		position: absolute
+		bottom: 10px
+		left: 0
+		font-size: 16px
+		&-accent
+			font-family: 'Raleway-Bold', sans-serif
+
+
+
+
+
+
+
+// ================================================
+.SectionSlider
+	display: block
+	padding: 3.125em 0
+	background-image: url('../img/FonSlider.jpg')
+	-webkit-background-size: cover
+	background-size: cover
+	background-position: center center
+	background-repeat: no-repeat
+	width: 100%
+	min-height: 400px
+
+.SectionSlider-heading
+	color: #fff
+	text-align: center
+	text-transform: uppercase
+	font: 30px 'Raleway-Bold', sans-serif
+	margin: 0 auto
+
+.wrap_p_slider
+	width: 100%
+	height: auto
+	margin: 0 auto
+	padding: 54px 0 60px
+	text-align: center
+	overflow-x: hidden
+	position: relative
+
+.p_slider
+	height: 265px
+	width: 100%
+	margin: 50px auto 64px
+	margin-left: -275px
+	position: relative
+	left: 50%
+	right: 0
+	bottom: 0
+	top: 0
+
+
+.p_slider__item
+	position: absolute
+	width: 70%
+	min-height: 275px
+	max-width: 554px
+	min-width: 290px
+	display: block
+	background-color: #fff
+	text-align: left
+	border-radius: 10px
+	padding: 24px 20px
+	cursor: pointer
+	transition-duration: 1.5s
+	transition-property: transform,left,opacity,top
+	box-shadow: 0 0 100px 10px rgba(0,0,0,0.4)
+	&:nth-of-type(1)
+		transform: scale(0.65)
+		left: -400px
+		z-index: 1
+		top: -80px
+	&:nth-of-type(2)
+		transform: scale(1)
+		left: 0px
+		z-index: 2
+	&:nth-of-type(3)
+		transform: scale(0.65)
+		left: 400px
+		z-index: 1
+		top: -80px
+
+.p_slider__imgWrap
+	width: 30%
+	height: 230px
+	display: inline-block
+	vertical-align: top
+
+.p_slider__item img
+	width: 100%
+	height: auto
+
+.p_slider__textWrap
+	display: inline-block
+	width: 69%
+	padding: 0 5px 5px 20px
+	vertical-align: top
+
+.p_slider__text_1
+	font-size: 24px
+	font-family: 'Raleway-Bold'
+	text-transform: uppercase
+	color: #c04d45
+
+.p_slider__text_2
+	font-size: 13px
+	font-family: 'Raleway-Bold'
+	line-height: 1
+	color: #000
+
+.p_slider__text_3
+	margin: 30px 0 0 0
+	font-size: 15px
+	font-family: 'Raleway-Bold'
+	color: #000
+	line-height: 1.15
+
+.controls
+	position: absolute
+	width: 210px
+	left: 50%
+	transform: translateX(-50%)
+	bottom: 0%
+	.left
+		float: left
+		cursor: pointer
+		position: relative
+		display: block
+		left: 0px
+		width: 34px
+		height: 67px
+		background-image: url('../img/slider-arrows.png')
+		background-position: 0 0
+		background-repeat: no-repeat
+	.right
+		float: right
+		cursor: pointer
+		position: relative
+		right: 0px
+		width: 34px
+		height: 67px
+		background-image: url('../img/slider-arrows.png')
+		background-position: 100% 0
+		background-repeat: no-repeat
+		transition: all .4s
+	.left
+		transition: all .4s
+	.right:hover, .left:hover
+		opacity: 1
+		
+
+
+
+
+
+
+// =======================================
+.comments
+	padding: 3.125em 0
+	&-heading
+		margin: 0
+		padding: 1.25em 2em
+		font: 1.375em 'Raleway-Bold', sans-serif
+		text-transform: uppercase
+		color: $accent-color-2
+		&-wrap
+			&.border-outer::before
+				left: 0
+				background-color: $accent-color-1
+			&.border-outer::after
+				right: 100%
+				background-color: $accent-color-1
+		&.border-inner::before
+			right: 0
+			background-color: $accent-color-1
+		&.border-inner::after
+			left: 100%
+			background-color: $accent-color-1
+	&-slider
+		margin-top: 3.125em
+		box-shadow: 0 0 50px -10px rgba(0,0,0,.5)
+	&-slide
+		min-height: 430px
+		padding: 2em
+		outline: none
+		&-title
+			font: 1.375em 'Raleway-Bold', sans-serif
+			color: $accent-color-2
+			text-align: center
+			text-transform: uppercase
+			text-decoration: underline
+		&-content
+			margin-top: 3em
+			font-family: 'Raleway-Bold', sans-serif
+			text-align: center
+			&-heading
+				margin-bottom: 15px
+				color: $accent-color-2
+				font-size: 1.125em
+				text-transform: uppercase
+				text-decoration: underline
+
+		&-info
+			&-text
+				color: $accent-color-1
+				font-size: 13px
+			&-name
+				display: block
+				font: 16px 'Raleway-Bold', sans-serif
+				text-transform: uppercase
+				color: #000
+
+			
+
+	&-img-wrap
+		max-width: 152px
+
+
+
+
+
+// ===================================================
+.problemDescribe
+	margin-bottom: -1px
+	padding: 5em 0
+	box-shadow: 0px 140px 300px 75px rgba(0, 0, 0, 0.3)
+	&-heading-wrap
+		padding: 3em 4.3em
+		&.border-outer
+			&::before
+				width: 90%
+				left: 10%
+				background-color: $accent-color-2
+			&::after
+				height: 17%
+				background-color: $accent-color-2
+
+	&-heading
+		font: 1.875em 'Raleway-Black', sans-serif
+		text-align: center
+		color: $accent-color-1
+		&.border-inner
+			&::before
+				width: 90%
+				right: 10%
+				background-color: $accent-color-2
+			&::after
+				height: 17%
+				background-color: $accent-color-2
+	&-text
+		margin-top: 1.9em
+		font: 1.125em 'Raleway-Black', sans-serif
+		text-align: center
+
+	&-form-wrap
+		input, textarea
+			margin-top: 15px
+		.form-name
+			margin-top: 0
+		textarea
+			margin-top: 30px
+		.form-btn
+			margin-top: 35px
+
+
+
+
+
+
+// ======================================================
+.footer
+	display: flex
+	align-items: center
+	min-height: 170px
+	height: 1px
+	background-image: linear-gradient(to top, #3a3a3a, #27374b)
+	border-top: 32px solid #e9e9e9
+	&-logo-wrap
+		max-width: 320px
+
+	&-tel-wrap
+		margin-left: 10px
+		transition: $transition
+		font-size: 2em
+		&::before
+			top: 0
+			width: 43px
+			height: 43px
+			font-size: 23px
+			color: #fff
+			border-color: #fff
+
+
+	&-tel
+		color: #fff
+	.contacts-icon
+		width: 43px
+		height: 43px
+		&-tg
+			top: 4px
+			transition: $transition
+			&::before
+				width: 43px
+				height: 43px
+				font-size: 43px
+				color: #fff
+			&:hover
+				&::before
+					color: $accent-color-1
+
+
+
+
+
+
+.form
+	input, textarea
+		width: 100%
+		padding: 13px 15px
+		border: none
+		outline: none
+		box-shadow: 0 5px 40px -5px rgba(0,0,0,.4)
+		border-radius: 10px
+		&:focus
+			box-shadow: inset 0 0 8px rgba(0,0,0,.3)
+
+	textarea
+		min-height: 95px
+		resize: none
+		
+	input:not(.form-btn)
+		font-size: 14px
+		color: #898989
+		background-color: #fff
+
+	&-btn
+		font-size: 16px
+		cursor: pointer
+		&:active
+			transform: translate(1px, 1px)
+		&:focus
+			outline: none
+		&:disabled
+			background-color: #6f92cc
+			&:hover
+				background-color: #6f92cc
+
+
+
+.problemDescribe-modal, .feedback-modal
+	position: relative
+	margin: 0 auto
+	padding: 40px 20px !important
+	max-width: 750px
+	background-color: #fff
+	.problemDescribe-modal-heading-wrap
+		padding: 15px
+	.problemDescribe-modal-heading
+		font-size: 16px
+		font-family: 'Raleway-Bold'
+		color: $accent-color-1
+	
+	.modal-contacts
+		margin-bottom: 10px
+		ol
+			margin: 0
+			padding-left: 20px
+			font-size: 14px
+	.brief-link
+		font-size: 18px
+	.problemDescribe-form
+		max-width: 360px
+		margin: 0 auto
+
+	a
+		white-space: nowrap
+
+
+.feedback-modal
+	.feedback-content
+		padding: 0	
+
+
+.modal-video
+	.presentation-video
+		max-width: 75%
+		margin: 0 auto
+.modal-video-btn
+	max-width: 200px
+	margin: 50px auto 0
+	cursor: pointer
+	background-color: #fff
+	color: $accent-color-1
+	border: 2px solid $accent-color-1
+	&:hover
+		background-color: $accent-color-1
+		color: #fff
+		border-color: #fff
+
+
+
+
+
+
+
+
+// *
+// 	outline: 1px solid blue
+
+
+
+@import "media"
